@@ -20,8 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    return view('Flayout');
+})->middleware(['auth'])->name('Flayout');
 
 Route::post('/store',[allInfocardMaintain::class,'storeDataWildlife'])->name('store');
 Route::post('/storeThesis',[allInfocardMaintain::class,'storeDataThesis'])->name('storeThesis');
