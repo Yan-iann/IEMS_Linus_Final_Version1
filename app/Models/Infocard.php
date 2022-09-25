@@ -12,6 +12,7 @@ class Infocard extends Model
     public $timestamps = false;
 
     protected $table = 'infocards';
+    protected $primaryKey = 'info_ID';
     
     protected $fillable = [
         'info_type',

@@ -99,19 +99,19 @@ class infocardMaintain extends Controller
     //for deleting infocards
     public function deleteWildlife($info_ID)
     {
-        Wildlife::destroy($info_ID);
+        Infocard::destroy($info_ID);
         $wildlife = Wildlife::all();
         return view ('wildlife')->with('wildlifes', $wildlife);
     }
     public function deleteThesis($info_ID)
     {
-        thesis_paper::destroy($info_ID);
+        Infocard::destroy($info_ID);
         $thesis = thesis_paper::all();
         return view ('thesis')->with('thesis', $thesis);
     }
     public function deleteJournal($info_ID)
     {
-        journal_article::destroy($info_ID);
+        Infocard::destroy($info_ID);
         $journal = journal_article::all();
         return view ('journal')->with('journal', $journal);
     }
