@@ -28,6 +28,11 @@ class infocardMaintain extends Controller
         $journal = journal_article::all();
         return view('journal')->with('journal',$journal);
     }
+
+    public function Fprofile()
+    {
+        return view ('FProfileView');
+    }
     //end of viewing infocards
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
     //for showing
@@ -59,7 +64,8 @@ class infocardMaintain extends Controller
         $wildlife = Wildlife::find($info_ID);
         $input = $request->all();
         $wildlife->update($input);
-        return view('displayWildlife')->with('wildlifes',$wildlife);
+        $wildlife = Wildlife::all();
+        return view('wildlife')->with('wildlifes',$wildlife);
     }
 
     public function editThesis($info_ID)
@@ -72,7 +78,8 @@ class infocardMaintain extends Controller
         $thesis = thesis_paper::find($info_ID);
         $input = $request->all();
         $thesis->update($input);
-        return view('displayThesis')->with('thesis',$thesis);;
+        $thesis = thesis_paper::all();
+        return view('thesis')->with('thesis',$thesis);
     }
     public function editJournal($info_ID)
     {
@@ -84,7 +91,8 @@ class infocardMaintain extends Controller
         $journal = journal_article::find($info_ID);
         $input = $request->all();
         $journal->update($input);
-        return view('displayJournal')->with('journal',$journal);
+        $journal = journal_article::all();
+        return view('journal')->with('journal',$journal);
     }
     //end of editing of infocards
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -16,12 +16,11 @@ use App\Http\Controllers\infocardMaintain;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('Flayout');
-})->middleware(['auth'])->name('Flayout');
+
+
 
 Route::post('/store',[allInfocardMaintain::class,'storeDataWildlife'])->name('store');
 Route::post('/storeThesis',[allInfocardMaintain::class,'storeDataThesis'])->name('storeThesis');
@@ -31,6 +30,7 @@ Route::post('/addWL',[infocardMaintain::class, 'storeDataWildlife'])->name('stor
 Route::post('/addThesis_Paper',[infocardMaintain::class, 'storeDataThesis'])->name('storeDataThesis');
 Route::post('/addJournal_Article',[infocardMaintain::class, 'storeDataJournal'])->name('storeDataJournal');
 
+Route::get('/dashboard',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/wildlife',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/showWildlife/{info_ID}',[infocardMaintain::class, 'showWildlife'])->name('showWildlife');
 Route::get('/editWildlife/{info_ID}',[infocardMaintain::class, 'editWildlife'])->name('editWildlife');
@@ -52,5 +52,7 @@ Route::get('/editJournal/{info_ID}',[infocardMaintain::class, 'editJournal'])->n
 Route::post('/updateJournal/{info_ID}',[infocardMaintain::class, 'updateJournal'])->name('updateJournal');
 Route::get('/deleteJournal/{info_ID}',[infocardMaintain::class, 'deleteJournal'])->name('deleteJournal');
 Route::get('/searchJournal',[infocardMaintain::class, 'searchJournal'])->name('searchJournal');
+
+Route::get('/profile',[infocardMaintain::class, 'Fprofile'])->name('Fprofile');
 
 require __DIR__.'/auth.php';

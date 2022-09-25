@@ -1,26 +1,37 @@
-
- <div class="sidebar close">
+@extends('Flayout')
+@section('content')
+<div class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu' ></i>
+            <span class="text">Linus</span> <!--Label sa page -->
+        </div>
+    </div>
+<div class="sidebar close">
       <ul>
         <li>
-        <img src="{{URL::asset('/images/logo_linuswhite.png')}}" alt="profile Pic" height="200" width="200">
+          <a href="{{ url('/') }}">
+          
+          </a>
         </li>
       </ul>
     
     <ul class="nav-links">
       <li>
-        <a href="#">
+      <a href="{{ route('wildlife') }}">
           <i class='bx bx-grid-alt' ></i>
           <span class="link_name">Wildlife</span>
-        </a>
+          </a>
       </li>
+
       <li>
         <div class="iocn-link">
-          <a href="#">
+          <a href="{{ route('thesis') }}">
             <i class='bx bx-collection' ></i>
             <span class="link_name">Thesis Paper</span>
           </a>
           <i class='bx bxs-chevron-down arrow' ></i>
         </div>
+
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Thesis Papers</a></li>
           <li><a href="#">Undergraduate</a></li>
@@ -29,36 +40,35 @@
       </li>
       <li>
         <div class="iocn-link">
-          <a href="#">
+          <a href="{{ route('journal') }}">
             <i class='bx bx-book-alt' ></i>
             <span class="link_name">Journal Articles</span>
           </a>
         </div>
       </li>
       <li>
-        <a href="#">
+        <a href="#"> 
           <i class='bx bx-pie-chart-alt-2' ></i>
           <span class="link_name">Analysis</span>
         </a>
       </li>
 
-
       <!-- Profile Deets -->
+
       <li>
         <div class="profile-details">
           <div class="profile-content">
             <!--<img src="image/profile.jpg" alt="profileImg">-->
           </div>
           <div class="name-job">
-            <div class="profile_name">Name </div> <!-- call Name -->
+            <div class="profile_name">{{ Auth::user()->name }}</div> <!-- call Name -->
             <div class="job">Faculty</div>        <!-- user type -->
           </div>
-          <i class='bx bx-log-out' ></i> <!-- Log out -->
+          <i class='bx bx-log-out' ></i> <!-- Log out  idk how e log out-->
         </div>
       </li>
-    </ul>
+    </ul>  
 </div>
-
       
 
  

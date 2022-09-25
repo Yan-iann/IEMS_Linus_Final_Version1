@@ -1,122 +1,89 @@
-
-
-<body>
-  <div class="modal fade" id="editModal{{ route('showWildlife',$item->info_ID)}}" tabindex="-1" aria-labelledby="WildlifeModal" aria-hidden="true"> <!-- id basically gi target sa pag open ug card modal-->
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+<form action="{{ route('updateWildlife', $item->info_ID) }}" method="post" enctype="multipart/form-data">
+      <div class="modal fade" id="ModalEditWl{{$item->info_ID}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+      {!! csrf_field() !!}
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
       <div class="modal-content">
-  
-        <div class="modal-header border-0 text-center">
-          <h5 class="modal-title  text-center" >Edit Wildlife</h5>
-          <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
 
-       <div class="modal-body">
+      <div class="modal-header border-0 text-center">
+        <h5 class="modal-title  text-center">Wildlife Details</h5>
+        <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
         <div class="container-fluid">
           <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
-      
-    
-            <form method="post" action="{{ route('updateWildlife',$wildlifes->info_ID) }}" enctype="multipart/form-data">
-              {!! csrf_field() !!}
-              
-
-                <div class="col-4">
-                  <div class="images">
-                    <img src="{{ asset($wildlifes->wildlife_pic) }}"/>
-                  </div>
-                </div>
-
-                      <div class="col-8">
-
-                        <div class="row">
-                          <div class="form group">
-                            <label class="form-label">Name:</label>
-                            <input type="input" class="form-control"  name="wildlife_name" value="{{$wildlifes->wildlife_name}}">
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="form-group">
-                            <label for="wildlife_scientific_name">Scientific Name:</label>
-                            <input type="input" class="form-control"  name="wildlife_scientific_name" value="{{$wildlifes->wildlife_scientific_name}}">
-                          </div>
-                        </div>
-
-                      </div>
-
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="wildlife_class">Class:</label>
-                    <input type="input" class="form-control"  name="wildlife_class" value="{{$wildlifes->wildlife_class}}">
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="wildlife_order">Order:</label>
-                    <input type="input" class="form-control"  name="wildlife_order" value="{{$wildlifes->wildlife_order}}">
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="wildlife_family">Family:</label>
-                    <input type="input" class="form-control"  name="wildlife_family" value="{{$wildlifes->wildlife_family}}">
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="wildlife_genus">Wildlife Genus:</label>
-                    <input class="form-control" type="input" name="wildlife_genus" value="{{$wildlifes->wildlife_genus}}">
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="wildlife_species">Wildlife Species:</label>
-                    <input type="input" class="form-control"  name="wildlife_species" value="{{$wildlifes->wildlife_species}}">
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <div class="form-group">
-                    <label for="wildlife_location">Wildlife Location:</label>
-                    <input type="input" class="form-control"  name="wildlife_location" value="{{$wildlifes->wildlife_location}}">
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <div class="form-group">
-                    <label for="wildlife_desc">Wildlife Desc:</label>
-                    <input type="input" class="form-control"  name="wildlife_desc" value="{{$wildlifes->wildlife_desc}}">
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <div class="form-group">
-                  <label for="wildlife_desc">Wildlife Status:</label>
-                    <input type="input" class="form-control"  name="wildlife_status" value="{{$wildlifes->wildlife_status}}">
-                  </div>
-                </div>
-
-                  <br>
-                  <button type="submit"  class="btn btn-info">Update </button>
-                </form>
-                <br>
-                <a href="{{ route('wildlife') }}"><button type="submit"  class="btn btn-outline-info">Exit</button>
-                                </a>
-             
             
+            <div class="col-4">
+            <img class="imageWildlife" src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
+            </div> 
+
+            <div class="col-8">
+              <div class="row">
+                <div class="col-12">
+              <label for="formGroupExampleInput" class="form-label">Wildlife Name</label>
+              <input type="text" class="form-control"  name="wildlife_name" value="{{ $item->wildlife_name}}">
+              </div>
+              </div>
+            
+
+            <div class="row">
+              <div class="col-12"><br>
+                <label for="formGroupExampleInput" class="form-label">Scientific Name</label>
+                <input type="text" class="form-control" name="wildlife_scientific_name" value="{{ $item->wildlife_scientific_name}}">
+              </div>
+            </div>
+          </div>
+
+            <div class="col-4">
+              <label for="formGroupExampleInput2" class="form-label">Class</label>
+              <input type="text" class="form-control" name="wildlife_class" value="{{ $item->wildlife_class}}">
+            </div>
+
+            <div class="col-4">
+              <label for="formGroupExampleInput2" class="form-label">Order</label>
+              <input type="text" class="form-control"  name="wildlife_order" value="{{ $item->wildlife_order}}">
+            </div>
+
+            <div class="col-4">
+              <label for="formGroupExampleInput2" class="form-label">Family</label><h2 class="detailsView"></h2 class="detailsView">
+              <input type="text" class="form-control"  name="wildlife_family" value="{{ $item->wildlife_family}}">
+            </div>
+
+            <div class="col-4">
+              <label for="formGroupExampleInput2" class="form-label">Genus</label>  <h2 class="detailsView"></h2 class="detailsView">
+              <input type="text" class="form-control" name="wildlife_genus" value="{{ $item->wildlife_genus}}">
+            </div>
+
+            <div class="col-4">
+              <label for="formGroupExampleInput2" class="form-label">Specie</label><h2 class="detailsView"></h2 class="detailsView">
+              <input type="text" class="form-control"  name="wildlife_species" value="{{ $item->wildlife_species}}">
+            </div>
+
+            <div class="col-4">
+              <label for="formGroupExampleInput2" class="form-label">Location</label> <h2 class="detailsView"></h2 class="detailsView">
+              <input type="text" class="form-control" name="wildlife_location" value="{{ $item->wildlife_location}}">
+            </div>
+
+            <div class="col-12">
+              <label for="exampleFormControlTextarea1" class="form-label">Widllife Status</label><h2 class="detailsView"></h2 class="detailsView">
+              <input type="text" class="form-control"  name="wildlife_status"  value="{{ $item->wildlife_status}}">
+            </div>
+            
+            <div class="col-12">
+              <label for="exampleFormControlTextarea1" class="form-label">Description</label><h2 class="detailsView"></h2 class="detailsView">
+              <input type="text" class="form-control"  name="wildlife_desc"  value="{{ $item->wildlife_desc}}">
+            </div>
+
+            <div class="modal-footer border-0">
+                <button type="submit" class="btn btn-info">Update</button>
+                <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
+            </div>
+
           </div>
         </div>
-       </div> <!-- end of modal body -->
-
-</div><!--end of modal content-->   
-</div><!-- end of modal dialogue -->
-</div><!-- end of modal -->
-
+      </div>
+    </div>
+  </div>
 </div>
+</form>
 
-
-</body>
-@stop 
