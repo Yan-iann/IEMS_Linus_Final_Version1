@@ -1,12 +1,10 @@
 @extends('Flayout')
 <body>
 <div class="sidebar close">
-      <ul>
-        <li>
-          <a href="{{ url('/') }}">
-          </a>
-        </li>
-      </ul>
+<div class="logo-details">
+      <i class='bx bxs-ghost'></i>
+      <span class="logo_name">Linus</span>
+    </div>
     
     <ul class="nav-links">
       <li>
@@ -42,28 +40,28 @@
       <!--end of Journal Article-->
 
       <li>
-        <a href="#"> 
+        <a href="{{ route('analysis') }}"> 
           <i class='bx bx-pie-chart-alt-2' ></i>
           <span class="link_name">Analysis</span>
         </a>
       </li>
       <!--end of Analysis-->
 
-      <!-- Profile Deets -->
       <li>
           <div class="profile-details">
                   <div class="profile-content">
-                  <!--<img src="image/profile.jpg" alt="profileImg">-->
+               <!--<img src="image/profile.jpg" alt="profileImg">-->
                   </div>
             <div class="name-job">
+                    <a href="{{ route('Fprofile') }}">
                     <div class="profile_name">{{ Auth::user()->name }}</div> <!-- call Name -->
+                    </a>
                     <div class="job">Faculty</div>        <!-- user type -->
+                    
             </div>
-          
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">

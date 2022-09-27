@@ -214,4 +214,29 @@ class infocardMaintain extends Controller
         $journal = journal_article::where('journal_title','LIKE','%'.$searchText.'%')->get();
         return view('searchJournal',compact('journal'));
     }
+    //end of search//
+    
+    //start of analysis
+
+    public function analysis()
+    {
+        $wildlife = Wildlife::count();
+        $thesis = thesis_paper::count();
+        $journal = journal_article::count();
+
+        return view('fAnalytics',compact('wildlife','thesis','journal'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    //end of analysis
 }

@@ -1,12 +1,11 @@
 @extends('Flayout')
 <body>
 <div class="sidebar close">
-      <ul>
-        <li>
-          <a href="{{ url('/') }}">
-          </a>
-        </li>
-      </ul>
+    <div class="logo-details">
+      <i class='bx bxs-ghost'></i>
+      <span class="logo_name">Linus</span>
+    </div>
+      
     
     <ul class="nav-links">
       <li>
@@ -41,7 +40,7 @@
       <!--end of Journal Article-->
 
       <li>
-        <a href="#"> 
+        <a href="{{ route('analysis') }}"> 
           <i class='bx bx-pie-chart-alt-2' ></i>
           <span class="link_name">Analysis</span>
         </a>

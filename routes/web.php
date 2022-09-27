@@ -54,5 +54,5 @@ Route::get('/deleteJournal/{info_ID}',[infocardMaintain::class, 'deleteJournal']
 Route::get('/searchJournal',[infocardMaintain::class, 'searchJournal'])->name('searchJournal');
 
 Route::get('/profile',[infocardMaintain::class, 'Fprofile'])->name('Fprofile');
-
+Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis');
 require __DIR__.'/auth.php';
