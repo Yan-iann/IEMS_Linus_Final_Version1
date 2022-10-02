@@ -50,7 +50,7 @@
     </div>
     <div class="form-group">
       <label for="wildlife_genus">Date Published:</label>
-      <input class="form-control" type="input" name="date_published"  placeholder="Enter Date Published">
+      <input class="form-control" type="date" name="date_published"  placeholder="Enter Date Published">
     </div>
     <div class="form-group">
       <input type="hidden" class="form-control" name="journal_status" value="approved">

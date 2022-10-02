@@ -6,12 +6,16 @@
       <span class="logo_name">Linus</span>
     </div>
     
+    
     <ul class="nav-links">
       <li>
         <a href="{{ route('wildlife') }}">
           <i class='bx bx-grid-alt' ></i>
           <span class="link_name">Wildlife</span>
         </a>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Wildlife</a></li>
+        </ul>
       </li>
       <!--end of wildlife-->
       <li>
@@ -20,10 +24,12 @@
             <i class='bx bx-collection' ></i>
             <span class="link_name">Thesis Paper</span>
           </a>
-          
         </div>
 
-    
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Thesis Papers</a></li>
+        </ul>
+      </li>
       <!--end of Thesis Paper-->
       <li>
         <div class="iocn-link">
@@ -32,6 +38,10 @@
             <span class="link_name">Journal Articles</span>
           </a>
         </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#"> Journal Articles</a></li>
+        </ul>
+        
       </li>
       <!--end of Journal Article-->
 
@@ -40,6 +50,9 @@
           <i class='bx bx-pie-chart-alt-2' ></i>
           <span class="link_name">Analysis</span>
         </a>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">analysis</a></li>
+        </ul>
       </li>
       <!--end of Analysis-->
 
@@ -69,7 +82,7 @@
     </ul>    
 </div><!--end of Sidebar-->
 
-<div class="home-section">
+<div class="home-section" style="height: 100%">
 
     <div class="home-content">
       <i class='bx bx-menu' ></i>
@@ -84,7 +97,7 @@
                                     <td></td>
                                     <td></td>
                                     <td><input type="search" name="searchJournal" class="form-control mr-sm2" placeholder="Search Journal Title"></td>
-                                    <td><button class="btn btn-primary btn-sm" type="submit">Search</button></td>
+                                    <td><button class="btn btn-info btn-sm" type="submit">Search</button></td>
                                   </form>
                                 </tr>
                           </thead>
@@ -98,26 +111,29 @@
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
         
         @foreach($journal as $item)
-        <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-          <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalJournal{{$item->info_ID}}">
-              <div class="card-body bg-light text-primary">
-                <h5 class="card-title text-center">  {{$item->date_published }}</h5>
-                <h5 class="card-title text-center"> {{$item->journal_title}}</h5>
-                <div class="card-footer border-0"></div>
-                <p class="card-text text-center"> ({{$item->journal_author}})</p>
-              </div>
-           </div>  
-           @include('editJournal') 
-        </div>
-        @include('displayJournal')
+            <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal" data-bs-target="#ModalJournal{{$item->info_ID}}">
+                <div class="card border-dark" style="width: 18rem;">
+                      <div class="card-body bg-light ">
+                        <p class="text-muted fst-italic">{{$item->date_published }}</p>
+                        <h4 class="card-title">{{$item->journal_title}}</h4>
+                        <br>
+                        <p class="card-subtitle mb-2 text-muted">{{$item->journal_author}}</p>
+                      </div>
+                    <div class="card-footer border-0"></div>
+                    @include('editJournal')  
+                </div>
+            </div>
+          @include('displayJournal')
         @endforeach  
+      </div>
 
-        </div>
-        <hr>
-        <div class="addButton">
-        <a href="{{ route('storeDataJournal') }} "class="btn btn-success">+ </a>
-        <hr> 
-        </div>
+        <!-- Add Button -->
+        <a href="{{ route('storeDataJournal') }} " class="float">
+          <i class="bx bx-plus my-float"></i>
+        </a>
+
+
+    </div>
 
   @foreach($journal as $item)
 <!-- Delete Thesis Modal-->
@@ -127,9 +143,15 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
       <div class="modal-content">
             
-            <div class="col-12">
-            <h4>Are you sure you want to Delete?</h4>
+            <div class="modal-header border-0 text-center">
+              <h5 class="modal-title  text-center">Confirmation</h5>
+              <button type="button" class="btn-close bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
+            <div class="modal-body border-0">
+              <p>Are you sure you want to delete this information card?</p>
+            </div>
+
             <div class="modal-footer border-0">
                 <button type="submit" class="btn btn-danger">Delete</button>
                 <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
