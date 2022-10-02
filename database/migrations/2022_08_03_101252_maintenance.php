@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('maintenance',function (Blueprint $table){
             $table->bigIncrements('maintain_ID');
             $table->string('maintain_Date');
-            $table->unsignedBigInteger('user_ID');
-            $table->foreign('user_ID')->references('user_ID')->on('user')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedBigInteger('info_ID');
-            $table->foreign('info_ID')->references('info_ID')->on('infocards')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_ID')->references('user_ID')->on('user')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('info_ID')->references('info_ID')->on('infocards')->onDelete('cascade')->onUpdate('cascade');
+
+           
         });
     }
 

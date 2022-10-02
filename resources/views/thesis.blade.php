@@ -119,14 +119,7 @@
   </div>
   <hr>
   <div class="addButton">
-        <form method="post" action="{{ route('storeDataThesis') }}" enctype="multipart/form-data">
-        {!! csrf_field() !!}
-        <div class="form-group">
-          <input type="hidden" class="form-control" name="info_type" value="thesis">
-        </div>
-        {{ csrf_field() }}
-        <button type="submit"  class="btn btn-success">+</button>
-        </form>  
+        <a href="{{ route('storeDataThesis') }} "class="btn btn-success">+ </a>
         <hr> 
   </div>
 

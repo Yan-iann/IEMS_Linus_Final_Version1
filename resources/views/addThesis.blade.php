@@ -32,10 +32,6 @@
     <h2>Add A Thesis Paper Record</h2>
     <form method="post" action="{{ route('storeThesis') }}" enctype="multipart/form-data">
       {!! csrf_field() !!}
-       <div class="form-group">
-      <label for="thesis id">Information ID:</label>
-      <input type="input" class="form-control"  placeholder="Enter Information ID" name="info_ID">
-    </div>
       <div class="form-group">
       <label for="thesis_name">Thesis Title:</label>
       <input type="input" class="form-control"  placeholder="Enter Thesis Title" name="thesis_title">
@@ -49,10 +45,6 @@
       <input type="input" class="form-control"  placeholder="Enter Thesis Reference" name="thesis_reference">
     </div>
     <div class="form-group">
-      <label for="wildlife_order">Thesis File:</label>
-      <input type="input" class="form-control"  placeholder="Enter Thesis File" name="thesis_file">
-    </div>
-    <div class="form-group">
       <label for="wildlife_family">Thesis Type:</label>
       <input type="input" class="form-control"  placeholder="Enter Thesis Type" name="thesis_type">
     </div>
@@ -63,6 +55,7 @@
     <div class="form-group">
       <input type="hidden" class="form-control" name="thesis_status" value="approved">
     </div>
+    <input type="hidden" class="form-control" name="info_type" value="thesis_paper">
      {{ csrf_field() }}
     <button type="submit"  class="btn btn-success">Submit</button>
     <a  href="{{ route('thesis') }}" class="btn btn-dark" title="Back">

@@ -103,7 +103,7 @@
       @foreach($wildlifes as $item)
         <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
           <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
-            <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
+            <img class="card-img-top "src="{{ asset('storage/images/'.$item->wildlife_pic) }}" alt="Card image cap">
               <div class="card-body bg-light text-primary">
                 <h5 class="card-title text-center">{{$item->wildlife_name}}</h5>
                 <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
@@ -118,14 +118,7 @@
   </div>
   <hr>
   <div class="addButton">
-        <form method="post" action="{{ route('storeDataWildlife') }}" enctype="multipart/form-data">
-        {!! csrf_field() !!}
-        <div class="form-group">
-          <input type="hidden" class="form-control" name="info_type" value="wildlife">
-        </div>
-        {{ csrf_field() }}
-        <button type="submit"  class="btn btn-success">+</button>
-        </form>  
+        <a href="{{ route('storeDataWildlife') }} "class="btn btn-success">+ </a>
         <hr> 
   </div>
 

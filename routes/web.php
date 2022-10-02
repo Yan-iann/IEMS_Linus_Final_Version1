@@ -26,9 +26,9 @@ Route::post('/store',[allInfocardMaintain::class,'storeDataWildlife'])->name('st
 Route::post('/storeThesis',[allInfocardMaintain::class,'storeDataThesis'])->name('storeThesis');
 Route::post('/storeJournal',[allInfocardMaintain::class,'storeDataJournal'])->name('storeJournal');
 
-Route::post('/addWL',[infocardMaintain::class, 'storeDataWildlife'])->name('storeDataWildlife');
-Route::post('/addThesis_Paper',[infocardMaintain::class, 'storeDataThesis'])->name('storeDataThesis');
-Route::post('/addJournal_Article',[infocardMaintain::class, 'storeDataJournal'])->name('storeDataJournal');
+Route::get('/addWL',[infocardMaintain::class, 'storeDataWildlife'])->name('storeDataWildlife');
+Route::get('/addThesis_Paper',[infocardMaintain::class, 'storeDataThesis'])->name('storeDataThesis');
+Route::get('/addJournal_Article',[infocardMaintain::class, 'storeDataJournal'])->name('storeDataJournal');
 
 Route::get('/dashboard',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/wildlife',[infocardMaintain::class, 'wildlife'])->name('wildlife');

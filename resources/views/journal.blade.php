@@ -114,17 +114,11 @@
 
         </div>
         <hr>
-  <div class="addButton">
-        <form method="post" action="{{ route('storeDataJournal') }}" enctype="multipart/form-data">
-        {!! csrf_field() !!}
-        <div class="form-group">
-          <input type="hidden" class="form-control" name="info_type" value="journal">
-        </div>
-        {{ csrf_field() }}
-        <button type="submit"  class="btn btn-success">+</button>
-        </form>  
+        <div class="addButton">
+        <a href="{{ route('storeDataJournal') }} "class="btn btn-success">+ </a>
         <hr> 
-  </div>
+        </div>
+
   @foreach($journal as $item)
 <!-- Delete Thesis Modal-->
 <form action="{{ route('deleteJournal',$item->info_ID) }}" method="get" enctype="multipart/form-data">

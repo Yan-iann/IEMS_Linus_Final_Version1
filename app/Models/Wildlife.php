@@ -12,7 +12,7 @@ class Wildlife extends Model
 
     protected $table = 'wildlife';
     protected $primaryKey = 'info_ID';
-    
+
     protected $fillable = [
         'info_ID',
         'wildlife_name',

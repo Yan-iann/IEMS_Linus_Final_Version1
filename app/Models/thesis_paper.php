@@ -18,7 +18,6 @@ class thesis_paper extends Model
         'thesis_title',
         'thesis_author',
         'thesis_reference',
-        'thesis_file',
         'thesis_type',
         'date_published',
         'thesis_status',

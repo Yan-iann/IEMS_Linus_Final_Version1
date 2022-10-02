@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
          Schema::create('wildlife',function (Blueprint $table){
-            $table->unsignedBigInteger('info_ID');
-            $table->foreign('info_ID')->references('info_ID')->on('infocards')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('info_ID')->references('info_ID')->on('infocards')->onDelete('cascade')->onUpdate('cascade');
             $table->string('wildlife_name');
             $table->string('wildlife_scientific_name');
             $table->string('wildlife_class');

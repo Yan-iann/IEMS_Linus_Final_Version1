@@ -1,12 +1,10 @@
 @extends('Flayout')
 <body>
 <div class="sidebar close">
-      <ul>
-        <li>
-          <a href="{{ url('/') }}">
-          </a>
-        </li>
-      </ul>
+<div class="logo-details">
+      <i class='bx bxs-ghost'></i>
+      <span class="logo_name">Linus</span>
+    </div>
     
     <ul class="nav-links">
       <li>
@@ -41,7 +39,7 @@
       <!--end of Journal Article-->
 
       <li>
-        <a href="#"> 
+        <a href="{{ route('analysis') }}"> 
           <i class='bx bx-pie-chart-alt-2' ></i>
           <span class="link_name">Analysis</span>
         </a>
@@ -83,7 +81,7 @@
 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
             
             <div class="col-4">
-            <img style="width: 200px;"class="imageWildlife" src="{{ asset('storage/images/profile_Pic.png') }}" alt="Card image cap">
+            <img style="width: 200px;"class="imageWildlife" src="{{ asset('storage/images/profile_Pic.png') }}" alt="No profile picture">
             </div>
   
           <div class="col-12 col-lg-8">
