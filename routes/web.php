@@ -29,7 +29,7 @@ Route::get('/addWL',[infocardMaintain::class, 'storeDataWildlife'])->name('store
 Route::get('/addThesis_Paper',[infocardMaintain::class, 'storeDataThesis'])->name('storeDataThesis');
 Route::get('/addJournal_Article',[infocardMaintain::class, 'storeDataJournal'])->name('storeDataJournal');
 
-//Route::get('/dashboard',[infocardMaintain::class, 'wildlife'])->name('wildlife');
+Route::get('/dashboard',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/wildlife',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/showWildlife/{info_ID}',[infocardMaintain::class, 'showWildlife'])->name('showWildlife');
 Route::get('/editWildlife/{info_ID}',[infocardMaintain::class, 'editWildlife'])->name('editWildlife');
@@ -59,7 +59,7 @@ Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis')
 
 
 //ROUTE FOR ADMINISTRATOR///////////////////////////////////////////////////////////////////////////////////////
-Route::get('/dashboard',[adminController::class, 'adminDashboard'])->name('adminDashboard');
+//Route::get('/dashboard',[adminController::class, 'adminDashboard'])->name('adminDashboard');
 Route::get('/addUser',[adminController::class, 'addUser'])->name('addUser');
 
 //for storing user information
