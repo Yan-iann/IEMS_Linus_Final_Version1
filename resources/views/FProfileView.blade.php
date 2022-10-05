@@ -81,7 +81,7 @@
 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
             
             <div class="col-4">
-            <img style="width: 200px;"class="imageWildlife" src="{{ asset('storage/images/profile_Pic.png') }}" alt="Card image cap">
+            <img style="width: 200px;"class="imageWildlife" src="{{ asset('storage/images/profile_Pic.png') }}" alt="No profile picture">
             </div>
   
           <div class="col-12 col-lg-8">

@@ -141,7 +141,7 @@ class infocardMaintain extends Controller
     {
         $searchText = $_GET['searchWildlife'];
         $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$searchText.'%')->get();
-        return view('searchWildlife',compact('wildlife'));
+        return view('searchwildlife',compact('wildlife'));
     }
     public function searchThesis()
     {
