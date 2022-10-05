@@ -76,14 +76,14 @@
 
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="input">Wildlifes</span>
+      <span class="text">Wildlifes</span>
     </div>
     
     <div class="table-responsive">
                         <table class="table">
                              <thead>
                                 <tr>
-                                  <form style="input-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchWildlife') }}">
+                                  <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchWildlife') }}">
                                     <td></td>
                                     <td></td>
                                     <td><input type="search" name="searchWildlife" class="form-control mr-sm2" placeholder="Search Wildlife Name"></td>
@@ -102,9 +102,9 @@
         <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
           <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
             <img class="card-img-top "src="{{ asset('storage/images/'.$item->wildlife_pic) }}" alt="Card image cap">
-              <div class="card-body bg-light input-primary">
-                <h5 class="card-title input-center">{{$item->first_name}}</h5>
-                <p class="card-input input-center">({{$item->wildlife_scientific_name}})</p>
+              <div class="card-body bg-light text-primary">
+                <h5 class="card-title text-center">{{$item->first_name}}</h5>
+                <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
               </div>
            </div>
            @include('editWildlife')  
@@ -153,8 +153,8 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
       <div class="modal-content">
             
-      <div class="modal-header border-0 input-center">
-        <h5 class="modal-title  input-center">Add Wildlife Information</h5>
+      <div class="modal-header border-0 text-center">
+        <h5 class="modal-title  text-center">Add Wildlife Information</h5>
         <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       

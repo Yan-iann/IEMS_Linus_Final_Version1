@@ -119,11 +119,11 @@
   </div>
   <hr>
   <div class="addButton">
-        <a href="{{ route('storeDataThesis') }} "class="btn btn-success">+ </a>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalAddThesis">+</button>
         <hr> 
   </div>
 
-
+</body>
 @foreach($thesis as $item)
 <!-- Delete Thesis Modal-->
 <form action="{{ route('deleteThesis',$item->info_ID) }}" method="get" enctype="multipart/form-data">
@@ -147,7 +147,68 @@
 </div>
 </form>
 @endforeach  
-</body>
+<!-- Add Thesis Modal-->
+<form action="{{ route('storeThesis') }}" method="POST" enctype="multipart/form-data">
+      <div class="modal fade" id="ModalAddThesis" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+      {!! csrf_field() !!}
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
 
+      <div class="modal-header border-0 text-center">
+        <h5 class="modal-title  text-center">Add Thesis Paper Information</h5>
+        <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+
+            <div class="col-8">
+              <div class="row">
+                <div class="col-12">
+              <label for="formGroupExampleInput" class="form-label">Thesis Title</label>
+              <input type="input" class="form-control" placeholder="Enter Thesis Title" name="thesis_title">
+              </div>
+              </div>
+            
+
+            <div class="row">
+              <div class="col-12"><br>
+                <label for="formGroupExampleInput" class="form-label">Thesis Author</label>
+                <input type="input" class="form-control" placeholder="Enter Thesis Author" name="thesis_author" >
+              </div>
+            </div>
+          </div>
+
+            <div class="col-4">
+              <label for="formGroupExampleInput2" class="form-label">Thesis Reference</label>
+              <input type="input" class="form-control" placeholder="Enter Thesis Reference" name="thesis_reference" >
+            </div>
+
+            <div class="col-4">
+              <label for="formGroupExampleInput2" class="form-label">Thesis Type</label>
+              <input type="input" class="form-control" placeholder="Enter Thesis Type" name="thesis_type" >
+            </div>
+
+            <div class="col-4">
+              <label for="formGroupExampleInput2" class="form-label">Date Published</label>
+              <input type="input" class="form-control" placeholder="Enter Date Published" name="date_published" >
+            </div>
+
+             <input type="hidden" class="form-control" name="thesis_status" value="approved">
+             <input type="hidden" class="form-control" name="info_type" value="thesis_paper">
+
+            <div class="modal-footer border-0">
+                <button type="submit" class="btn btn-info">Submit</button>
+                <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
 
   
