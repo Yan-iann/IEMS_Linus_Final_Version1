@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('contribution',function (Blueprint $table){
             $table->bigIncrements('contri_ID');
             $table->string('contris_Date');
-            $table->foreignId('user_ID')->references('user_ID')->on('user')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_ID')->references('user_ID')->on('user_info')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('info_ID')->references('info_ID')->on('infocards')->onDelete('cascade')->onUpdate('cascade');
         });
     }
