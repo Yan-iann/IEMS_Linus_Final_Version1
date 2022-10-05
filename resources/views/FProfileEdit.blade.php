@@ -10,16 +10,12 @@
         <div class="col-12 col-lg-8">
           <div class="row g-1">
             <div class="col-12 col-lg-7">
-              <label for="formGroupExampleInput" class="form-label">FirstName</label>
+              <label for="formGroupExampleInput" class="form-label">First Name*</label>
               <input type="text" class="form-control" id="fname" placeholder="Example input placeholder">
             </div>
             <div class="col 12 col-lg-5">
               <label for="formGroupExampleInput" class="form-label">Last Name*</label>
               <input type="text" class="form-control" id="lname" placeholder="Example input placeholder">
-            </div>
-            <div class="col-12"><br>
-              <label for="formGroupExampleInput" class="form-label">Degree*</label>
-              <input type="text" class="form-control" id="degree" placeholder="Example input placeholder">
             </div>
 
             <div class="col-12"><br>

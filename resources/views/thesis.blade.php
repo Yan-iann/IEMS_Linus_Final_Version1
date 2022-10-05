@@ -12,6 +12,9 @@
           <i class='bx bx-grid-alt' ></i>
           <span class="link_name">Wildlife</span>
         </a>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Wildlife</a></li>
+        </ul>
       </li>
       <!--end of wildlife-->
       <li>
@@ -24,8 +27,6 @@
 
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Thesis Papers</a></li>
-          <li><a href="#">Undergraduate</a></li>
-          <li><a href="#">Postgraduate</a></li>
         </ul>
       </li>
       <!--end of Thesis Paper-->
@@ -36,6 +37,10 @@
             <span class="link_name">Journal Articles</span>
           </a>
         </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#"> Journal Articles</a></li>
+        </ul>
+        
       </li>
       <!--end of Journal Article-->
 
@@ -44,6 +49,9 @@
           <i class='bx bx-pie-chart-alt-2' ></i>
           <span class="link_name">Analysis</span>
         </a>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Analysis</a></li>
+        </ul>
       </li>
       <!--end of Analysis-->
 
@@ -73,7 +81,7 @@
     </ul>    
 </div><!--end of Sidebar-->
 
-<div class="home-section">
+<div class="home-section" style="height:100%">
 
     <div class="home-content">
       <i class='bx bx-menu' ></i>
@@ -88,7 +96,7 @@
                                     <td></td>
                                     <td></td>
                                     <td><input type="search" name="searchThesis" class="form-control mr-sm2" placeholder="Search Thesis Title"></td>
-                                    <td><button class="btn btn-primary btn-sm" type="submit">Search</button></td>
+                                    <td><button class="btn btn-info btn-sm" type="submit" style="color: white">Search</button></td>
                                   </form>
                                 </tr>
                           </thead>
@@ -100,22 +108,30 @@
       
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
         
-        @foreach($thesis as $item)
-        <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-          <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalThesis{{$item->info_ID}}">
-              <div class="card-body bg-light text-primary">
-                <h5 class="card-title text-center">  {{$item->date_published }}</h5>
-                <h5 class="card-title text-center"> {{$item->thesis_title}}</h5>
+    @foreach($thesis as $item)
+        <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal" data-bs-target="#ModalThesis{{$item->info_ID}}">
+            <div class="card border-dark" style="width: 18rem;">
+                  <div class="card-body bg-light ">
+                    <p class="text-muted fst-italic">{{$item->date_published }}</p>
+                    <h4 class="card-title">{{$item->thesis_title}}</h4>
+                    <br>
+                    <p class="card-subtitle mb-2 text-muted">{{$item->thesis_author}}</p>
+                  </div>
                 <div class="card-footer border-0"></div>
-                <p class="card-text text-center"> ({{$item->thesis_author}})</p>
-              </div>
-           </div>  
-           @include('editThesis')  
+                @include('editThesis')  
+            </div>
         </div>
-        @include('displayThesis')
-        @endforeach  
+      @include('displayThesis')
+    @endforeach  
+      
+
 
         </div>
+
+        <a href="{{ route('storeDataThesis') }} " class="float">
+          <i class="bx bx-plus my-float"></i>
+          </a>
+      
   </div>
   <hr>
   <div class="addButton">
@@ -130,11 +146,18 @@
       <div class="modal fade" id="ModalDeleteThesis{{$item->info_ID}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
       {!! csrf_field() !!}
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
+      <div class="modal-content  bg-light">
             
-            <div class="col-12">
-            <h4>Are you sure you want to Delete?</h4>
-            </div>
+            
+        <div class="modal-header border-0 text-center">
+          <h5 class="modal-title  text-center">Confirmation</h5>
+          <button type="button" class="btn-close bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body border-0">
+          <p>Are you sure you want to delete this information card?</p>
+        </div>
+
             <div class="modal-footer border-0">
                 <button type="submit" class="btn btn-danger">Delete</button>
                 <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
