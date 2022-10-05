@@ -32,10 +32,6 @@
     <h2>Add A Journal Article Record</h2>
     <form method="post" action="{{ route('storeJournal') }}" enctype="multipart/form-data">
       {!! csrf_field() !!}
-       <div class="form-group">
-      <label for="Journal id">Information ID:</label>
-      <input type="input" class="form-control"  placeholder="Enter Information ID" name="info_ID">
-    </div>
       <div class="form-group">
       <label for="Journal_name">Journal Title:</label>
       <input type="input" class="form-control"  placeholder="Enter Journal Title" name="journal_title">
@@ -59,6 +55,7 @@
     <div class="form-group">
       <input type="hidden" class="form-control" name="journal_status" value="approved">
     </div>
+    <input type="hidden" class="form-control" name="info_type" value="journal_article">
      {{ csrf_field() }}
     <button type="submit"  class="btn btn-success">Submit</button>
     <a  href="{{ route('journal') }}" class="btn btn-dark" title="Back">

@@ -116,82 +116,23 @@ class infocardMaintain extends Controller
         return view ('journal')->with('journal', $journal);
     }
     //end of deleting infocards
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+///////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+
     //for storing data in infocard table
     public function storeDataWildlife(Request $request)
     {
-        $validator = Validator::make($request->all(), [ 
-
-        'info_type' => 'required',
-
-    ]);
-    if($validator->fails())
-    {
-        return redirect('/')->withErrors($validator)->withInput()->with('fail','Something went wrong. Please try again.');
-    }
-    else
-    {
-        $infocard = new Infocard;
-        $infocard->info_type = $request->info_type;
-        if($infocard->save())
-            {
-                return view('/addWL')->with('Sucess','Registered');
-            }
-        else
-            {
-                return back()->with('error','Failed To Registered');
-            }
-    }
+        return view('/addWL');
     }//end of save
+
     public function storeDataThesis(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-
-        'info_type' => 'required',
-
-    ]);
-    if($validator->fails())
-    {
-        return redirect('/')->withErrors($validator)->withInput()->with('fail','Something went wrong. Please try again.');
-    }
-    else
-    {
-        $infocard = new Infocard;
-        $infocard->info_type = $request->info_type;
-        if($infocard->save())
-            {
-                return view('/addThesis')->with('sucess','Succesfully Registered');
-            }
-        else
-            {
-                return back()->with('error','Failed To Registered');
-            }
-    }
+        return view('/addThesis');
     }//end of save
+
     public function storeDataJournal(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-
-        'info_type' => 'required',
-
-    ]);
-    if($validator->fails())
-    {
-        return redirect('/')->withErrors($validator)->withInput()->with('fail','Something went wrong. Please try again.');
-    }
-    else
-    {
-        $infocard = new Infocard;
-        $infocard->info_type = $request->info_type;
-        if($infocard->save())
-            {
-                return view('/addJournal')->with('sucess','Succesfully Registered');
-            }
-        else
-            {
-                return back()->with('error','Failed To Registered');
-            }
-    }
+        return view('/addJournal');
     }//end of save
     //end of storing data in infocard table
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

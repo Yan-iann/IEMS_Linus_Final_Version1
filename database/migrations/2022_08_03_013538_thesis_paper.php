@@ -14,12 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('thesis_paper',function (Blueprint $table){
-            $table->unsignedBigInteger('info_ID');
-            $table->foreign('info_ID')->references('info_ID')->on('infocards')->onDelete('cascade')->onUpdate('cascade');
+            //$table->foreign("info_ID")->constrained("infocards");
+            $table->foreignId('info_ID')->references('info_ID')->on('infocards')->onDelete('cascade')->onUpdate('cascade');
             $table->string('thesis_title');
             $table->string('thesis_author');
             $table->string('thesis_reference');
-            $table->string('thesis_file');
             $table->string('thesis_type');
             $table->string('date_published');
             $table->string('thesis_status');

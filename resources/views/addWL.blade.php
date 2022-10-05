@@ -30,12 +30,8 @@
     <div class="card-body">
       
     <h2>Add A WildLife Record</h2>
-    <form method="post" action="{{ route('store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
       {!! csrf_field() !!}
-      <div class="form-group">
-      <label for="wildlife_infoID">Information ID:</label>
-      <input type="input" class="form-control"  placeholder="Enter ID" name="info_ID">
-    </div>
       <div class="form-group">
       <label for="wildlife_name">Wildlife Name:</label>
       <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
@@ -79,6 +75,7 @@
       <label for="wildlife_pic">Wildlife Picture:</label>
       <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
     </div>
+    <input type="hidden" class="form-control" name="info_type" value="wildlife">
     <br>
      {{ csrf_field() }}
     <button type="submit"  class="btn btn-success">Submit</button>

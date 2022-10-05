@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\allInfocardMaintain;
 use App\Http\Controllers\infocardMaintain;
+use App\Http\Controllers\adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +20,16 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-
-
-
+//ROUTE FOR FACULTY////////////////////////////////////////////////////////////////////////////////////////////////
 Route::post('/store',[allInfocardMaintain::class,'storeDataWildlife'])->name('store');
 Route::post('/storeThesis',[allInfocardMaintain::class,'storeDataThesis'])->name('storeThesis');
 Route::post('/storeJournal',[allInfocardMaintain::class,'storeDataJournal'])->name('storeJournal');
 
-Route::post('/addWL',[infocardMaintain::class, 'storeDataWildlife'])->name('storeDataWildlife');
-Route::post('/addThesis_Paper',[infocardMaintain::class, 'storeDataThesis'])->name('storeDataThesis');
-Route::post('/addJournal_Article',[infocardMaintain::class, 'storeDataJournal'])->name('storeDataJournal');
+Route::get('/addWL',[infocardMaintain::class, 'storeDataWildlife'])->name('storeDataWildlife');
+Route::get('/addThesis_Paper',[infocardMaintain::class, 'storeDataThesis'])->name('storeDataThesis');
+Route::get('/addJournal_Article',[infocardMaintain::class, 'storeDataJournal'])->name('storeDataJournal');
 
-Route::get('/dashboard',[infocardMaintain::class, 'wildlife'])->name('wildlife');
+//Route::get('/dashboard',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/wildlife',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/showWildlife/{info_ID}',[infocardMaintain::class, 'showWildlife'])->name('showWildlife');
 Route::get('/editWildlife/{info_ID}',[infocardMaintain::class, 'editWildlife'])->name('editWildlife');
@@ -55,4 +54,16 @@ Route::get('/searchJournal',[infocardMaintain::class, 'searchJournal'])->name('s
 
 Route::get('/profile',[infocardMaintain::class, 'Fprofile'])->name('Fprofile');
 Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis');
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//ROUTE FOR ADMINISTRATOR///////////////////////////////////////////////////////////////////////////////////////
+Route::get('/dashboard',[adminController::class, 'adminDashboard'])->name('adminDashboard');
+Route::get('/addUser',[adminController::class, 'addUser'])->name('addUser');
+
+//for storing user information
+Route::post('/storeUser',[adminController::class, 'storeUserInfo'])->name('storeUserInfo');
+//
+
 require __DIR__.'/auth.php';

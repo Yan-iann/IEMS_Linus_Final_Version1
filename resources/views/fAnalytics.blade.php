@@ -37,12 +37,10 @@ chart.render();
 
 <body>
 <div class="sidebar close">
-      <ul>
-        <li>
-          <a href="{{ url('/') }}">
-          </a>
-        </li>
-      </ul>
+<div class="logo-details">
+      <i class='bx bxs-ghost'></i>
+      <span class="logo_name">Linus</span>
+    </div>
     
     <ul class="nav-links">
       <li>
@@ -122,6 +120,7 @@ chart.render();
     <br>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
+    <div style="text-align:center;">
             <div class="col-12 col-lg-8">
             <div class="row g-1">
               <div class="col-12  col-lg-7">
@@ -142,5 +141,6 @@ chart.render();
                 <label for="formGroupExampleInput" class="form-label">Journal Articles</label>
                 <h5 class="detailsView">{{ $journal }}</h5 class="detailsView">
               </div>
+</div>
 </body>
 

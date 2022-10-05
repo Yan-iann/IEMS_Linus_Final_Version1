@@ -5,45 +5,23 @@
       <i class='bx bxs-ghost'></i>
       <span class="logo_name">Linus</span>
     </div>
+      
+    
     <ul class="nav-links">
       <li>
         <a href="{{ route('wildlife') }}">
           <i class='bx bx-grid-alt' ></i>
-          <span class="link_name">Wildlife</span>
+          <span class="link_name">Faculty</span>
         </a>
       </li>
-      <!--end of wildlife-->
+      <!--end of faculty-->
       <li>
         <div class="iocn-link">
           <a href="{{ route('thesis') }}">
             <i class='bx bx-collection' ></i>
-            <span class="link_name">Thesis Paper</span>
+            <span class="link_name">Students</span>
           </a>
         </div>
-
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Thesis Papers</a></li>
-         
-        </ul>
-      </li>
-      <!--end of Thesis Paper-->
-      <li>
-        <div class="iocn-link">
-          <a href="{{ route('journal') }}">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">Journal Articles</span>
-          </a>
-        </div>
-      </li>
-      <!--end of Journal Article-->
-
-      <li>
-        <a href="{{ route('analysis') }}"> 
-          <i class='bx bx-pie-chart-alt-2' ></i>
-          <span class="link_name">Analysis</span>
-        </a>
-      </li>
-      <!--end of Analysis-->
 
       <!-- Profile Deets -->
       <li>
@@ -52,10 +30,10 @@
                <!--<img src="image/profile.jpg" alt="profileImg">-->
                   </div>
             <div class="name-job">
-                   
-                    <div class="profile_name">{{ Auth::user()->name }}</div> <!-- call Name -->
+                    <a href="{{ route('Fprofile') }}">
+                    <div class="profile_name">{{ Auth::user()->user_ID }}</div> <!-- call Name -->
                     </a>
-                    <div class="job">Faculty</div>        <!-- user type -->
+                    <div class="job">Administrator</div>        <!-- user type -->
                     
             </div>
                         <!-- Authentication -->
@@ -76,17 +54,17 @@
 
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="text">Wildlifes</span>
+      <span class="text">User Accounts</span>
     </div>
     
     <div class="table-responsive">
                         <table class="table">
                              <thead>
                                 <tr>
-                                  <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchWildlife') }}">
+                                  <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
                                     <td></td>
                                     <td></td>
-                                    <td><input type="search" name="searchWildlife" class="form-control mr-sm2" placeholder="Search Wildlife Name"></td>
+                                    <td><input type="search" name="searchWildlife" class="form-control mr-sm2" placeholder="Search User"></td>
                                     <td><button class="btn btn-primary btn-sm" type="submit">Search</button></td>
                                   </form>
                                 </tr>
@@ -97,52 +75,26 @@
 
       
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
-        
-      @foreach($wildlifes as $item)
+            @foreach($userInfo as $item)
         <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
           <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
-            <img class="card-img-top "src="{{ asset('storage/images/'.$item->wildlife_pic) }}" alt="Card image cap">
+            <img class="card-img-top "src="{{ asset($item->profile_pic) }}" alt="Card image cap">
               <div class="card-body bg-light text-primary">
                 <h5 class="card-title text-center">{{$item->first_name}}</h5>
-                <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
+                <p class="card-text text-center">({{$item->last_name}})</p>
+                <p class="card-text text-center">({{$item->user_type}})</p>
               </div>
            </div>
-           @include('editWildlife')  
         </div>
-        @include('displayWildlife') 
         @endforeach
         </div>
        
   </div>
   <hr>
   <div class="addButton">
-        <a href="{{ route('storeDataWildlife') }} "class="btn btn-success">+ </a>
+        <a href="{{ route('addUser') }}" class="btn btn-success">+ </a>
         <hr> 
   </div>
-
-@foreach($wildlifes as $item)
-<!-- Delete Wildlife Modal-->
-<form action="{{ route('deleteWildlife',$item->info_ID) }}" method="get" enctype="multipart/form-data">
-      <div class="modal fade" id="ModalDeleteWl{{$item->info_ID}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-      {!! csrf_field() !!}
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
-            
-            <div class="col-12">
-            <h4>Are you sure you want to Delete?</h4>
-            </div>
-            <div class="modal-footer border-0">
-                <button type="submit" class="btn btn-danger">Delete</button>
-                <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</form>
-@endforeach
 </body>
 
 
