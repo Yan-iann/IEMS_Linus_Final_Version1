@@ -142,7 +142,7 @@
       <div class="modal fade" id="ModalDeleteThesis{{$item->info_ID}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
       {!! csrf_field() !!}
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
+      <div class="modal-content  bg-light">
             
             
         <div class="modal-header border-0 text-center">

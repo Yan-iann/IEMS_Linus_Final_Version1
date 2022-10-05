@@ -1,6 +1,6 @@
 <div class="modal fade" id="ModalThesis{{$item->info_ID}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-    <div class="modal-content bg-light">
+    <div class="modal-content bg-light"> 
 
       <div class="modal-header border-0 text-center">
         <h5 class="modal-title  text-center">Thesis Paper Details</h5>

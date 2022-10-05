@@ -44,7 +44,7 @@
         
       </li>
       <!--end of Journal Article-->
-
+ 
       <li>
         <a href="{{ route('analysis') }}"> 
           <i class='bx bx-pie-chart-alt-2' ></i>

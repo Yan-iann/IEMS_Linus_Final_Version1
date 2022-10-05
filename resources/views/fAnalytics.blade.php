@@ -134,7 +134,7 @@
               <h6 class="card-subtitle mb-2 text-muted">Analysis Here</h6>
             </div>
           </div>
-        </div>
+        </div> 
 
         <div class="col-12 col-md-12 col-lg-6"style="height:12rem;">
           <div class="card" >

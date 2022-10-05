@@ -13,7 +13,7 @@
         <div class="container-fluid">
           <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
-            
+             
             <div class="col-12">
               <label for="formGroupExampleInput" class="form-label">Journal Title</label>
               <input type="text" class="form-control"  name="journal_title" value="{{ $item->journal_title}}">

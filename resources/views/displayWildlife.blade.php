@@ -1,7 +1,7 @@
 
 <div class="modal fade m-3" id="ModalWildlife{{$item->info_ID}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-    <div class="modal-content bg-light">
+    <div class="modal-content  bg-light">
 
       <div class="modal-header border-0 text-center">
         <h5 class="modal-title  text-center">Wildlife Details</h5>

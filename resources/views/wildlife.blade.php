@@ -85,11 +85,7 @@
 
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-<<<<<<< HEAD
       <span class="text">Wildlife</span>
-=======
-      <span class="input">Wildlifes</span>
->>>>>>> 693b9253c76260226d4b9bba0affbfd3e8c0207e
     </div>
     
     <div class="table-responsive">
@@ -111,20 +107,13 @@
       
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
         
-      @foreach($wildlifes as $item)
+        @foreach($wildlifes as $item)
         <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
           <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
-<<<<<<< HEAD
             <img class="card-img-top" src="{{ asset('storage/images/'.$item->wildlife_pic) }}" alt="Card image cap">
               <div class="card-body bg-light text-primary">
                 <h5 class="card-title text-center">{{$item->wildlife_name}}</h5>
                 <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
-=======
-            <img class="card-img-top "src="{{ asset('storage/images/'.$item->wildlife_pic) }}" alt="Card image cap">
-              <div class="card-body bg-light input-primary">
-                <h5 class="card-title input-center">{{$item->first_name}}</h5>
-                <p class="card-input input-center">({{$item->wildlife_scientific_name}})</p>
->>>>>>> 693b9253c76260226d4b9bba0affbfd3e8c0207e
               </div>
            </div>
            @include('editWildlife')  
@@ -132,26 +121,16 @@
         @include('displayWildlife') 
         @endforeach
         </div>
-<<<<<<< HEAD
        
 
     <!-- Add Button -->
 
-    <a href="{{ route('storeDataWildlife') }} " class="float">
+    <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddWl">
       <i class="bx bx-plus my-float"></i>
-      </a>
+    </a>
 
   </div>
   
-=======
-        
-  </div>
-  <hr>
-  <div class="addButton">
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalAddWl">+</button>
-        <hr> 
-  </div>
->>>>>>> 693b9253c76260226d4b9bba0affbfd3e8c0207e
 
 </body>
 
@@ -161,7 +140,7 @@
       <div class="modal fade" id="ModalDeleteWl{{$item->info_ID}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
       {!! csrf_field() !!}
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
+      <div class="modal-content  bg-light">
             
             
 
@@ -190,7 +169,7 @@
       {!! csrf_field() !!}
       <div class="modal fade" id="ModalAddWl" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
+      <div class="modal-content  bg-light">
             
       <div class="modal-header border-0 input-center">
         <h5 class="modal-title  input-center">Add Wildlife Information</h5>
@@ -201,54 +180,52 @@
         <div class="container-fluid">
           <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
             
-            <div class="col-4">
+            <div class="col-12">
             <label for="wildlife_pic">Wildlife Picture:</label>
             <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
             </div> 
 
-            <div class="col-8">
-              <div class="row">
-                <div class="col-12">
+          
+              <div class="col-12">
               <label for="formGroupExampleInput" class="form-label">Wildlife Name</label>
               <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
               </div>
-              </div>
+             
             
 
-            <div class="row">
-              <div class="col-12"><br>
+            
+              <div class="col-12">
                 <label for="formGroupExampleInput" class="form-label">Scientific Name</label>
                 <input type="input" class="form-control" placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name" >
               </div>
-            </div>
-          </div>
+          
 
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <label for="formGroupExampleInput2" class="form-label">Class</label>
               <input type="input" placeholder="Enter Wildlife Class" class="form-control" name="wildlife_class" >
             </div>
 
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <label for="formGroupExampleInput2" class="form-label">Order</label>
               <input type="input" class="form-control"  placeholder="Enter Wildlife Order" name="wildlife_order" >
             </div>
 
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <label for="formGroupExampleInput2" class="form-label">Family</label>
               <input type="input" class="form-control" placeholder="Enter Wildlife Family" name="wildlife_family" >
             </div>
 
-            <div class="col-4">
+            <div class="-12 col-md-4">
               <label for="formGroupExampleInput2" class="form-label">Genus</label>  
               <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" >
             </div>
 
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <label for="formGroupExampleInput2" class="form-label">Specie</label>
               <input type="input" class="form-control" placeholder="Enter Wildlife Species"  name="wildlife_species" >
             </div>
 
-            <div class="col-4">
+            <div class="col-12">
               <label for="formGroupExampleInput2" class="form-label">Location</label> 
               <input type="input" class="form-control"  placeholder="Enter Wildlife Location" name="wildlife_location" >
             </div>
@@ -258,11 +235,11 @@
 
             <div class="col-12">
               <label for="exampleFormControlinputarea1" class="form-label">Description</label>
-              <input type="input" class="form-control" placeholder="Enter Wildlife Description"  name="wildlife_desc"  >
+              <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description"></textarea>
             </div>
 
             <div class="modal-footer border-0">
-                <button type="submit" class="btn btn-info">Submit</button>
+                <button type="submit" class="btn btn-info text-white">Submit</button>
                 <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
             </div>
 
