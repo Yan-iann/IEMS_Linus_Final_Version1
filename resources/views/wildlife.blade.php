@@ -101,7 +101,7 @@
           <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
             <img class="card-img-top "src="{{ asset('storage/images/'.$item->wildlife_pic) }}" alt="Card image cap">
               <div class="card-body bg-light text-primary">
-                <h5 class="card-title text-center">{{$item->first_name}}</h5>
+                <h5 class="card-title text-center">{{$item->wildlife_name}}</h5>
                 <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
               </div>
            </div>

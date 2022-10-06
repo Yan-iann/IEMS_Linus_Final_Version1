@@ -1,4 +1,5 @@
 @extends('Flayout')
+
 <body>
 <div class="sidebar close">
     <div class="logo-details">
