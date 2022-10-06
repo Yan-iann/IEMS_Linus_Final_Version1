@@ -206,7 +206,7 @@
 
             <div class="col-4">
               <label for="formGroupExampleInput2" class="form-label">Date Published</label>
-              <input type="input" class="form-control" placeholder="Enter Date Published" name="date_published" >
+              <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
             </div>
 
             <div class="form-group">

@@ -207,7 +207,7 @@
 
             <div class="col-4">
               <label for="formGroupExampleInput2" class="form-label">Date Published</label>
-              <input type="input" class="form-control" placeholder="Enter Date Published" name="date_published" >
+              <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
             </div>
 
              <input type="hidden" class="form-control" name="thesis_status" value="approved">
