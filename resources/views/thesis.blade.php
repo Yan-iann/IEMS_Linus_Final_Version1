@@ -123,22 +123,14 @@
         </div>
       @include('displayThesis')
     @endforeach  
-      
-
 
         </div>
 
-        <a href="{{ route('storeDataThesis') }} " class="float">
+        <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddThesis">
           <i class="bx bx-plus my-float"></i>
-          </a>
+         </a>
       
   </div>
-  <hr>
-  <div class="addButton">
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalAddThesis">+</button>
-        <hr> 
-  </div>
-
 </body>
 @foreach($thesis as $item)
 <!-- Delete Thesis Modal-->

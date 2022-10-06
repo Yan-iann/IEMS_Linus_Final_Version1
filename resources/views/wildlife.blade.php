@@ -6,16 +6,15 @@
       <span class="logo_name">Linus</span>
     </div>
     <ul class="nav-links">
+
       <li>
         <a href="{{ route('wildlife') }}">
           <i class='bx bx-grid-alt' ></i>
           <span class="link_name">Wildlife</span>
         </a>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Wildlife</a></li>
-        </ul>
       </li>
       <!--end of wildlife-->
+
       <li>
         <div class="iocn-link">
           <a href="{{ route('thesis') }}">
@@ -23,12 +22,9 @@
             <span class="link_name">Thesis Paper</span>
           </a>
         </div>
-
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Thesis Papers</a></li>
-        </ul>
       </li>
       <!--end of Thesis Paper-->
+
       <li>
         <div class="iocn-link">
           <a href="{{ route('journal') }}">
@@ -36,10 +32,6 @@
             <span class="link_name">Journal Articles</span>
           </a>
         </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#"> Journal Articles</a></li>
-        </ul>
-        
       </li>
       <!--end of Journal Article-->
 
@@ -48,9 +40,6 @@
           <i class='bx bx-pie-chart-alt-2' ></i>
           <span class="link_name">Analysis</span>
         </a>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Analysis</a></li>
-        </ul>
       </li>
       <!--end of Analysis-->
 
@@ -61,7 +50,7 @@
                <!--<img src="image/profile.jpg" alt="profileImg">-->
                   </div>
             <div class="name-job">
-                   
+                    <a href="{{ route('Fprofile') }}">
                     <div class="profile_name">{{ Auth::user()->name }}</div> <!-- call Name -->
                     </a>
                     <div class="job">Faculty</div>        <!-- user type -->
@@ -85,11 +74,7 @@
 
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-<<<<<<< HEAD
       <span class="text">Wildlifes</span>
-=======
-      <span class="text">Wildlife</span>
->>>>>>> 072465f3db45546d17352bd361cf4ec0cf7f1e50
     </div>
     
     <div class="table-responsive">
@@ -125,10 +110,9 @@
         @include('displayWildlife') 
         @endforeach
         </div>
-       
+  
 
     <!-- Add Button -->
-
     <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddWl">
       <i class="bx bx-plus my-float"></i>
     </a>

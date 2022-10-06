@@ -124,12 +124,11 @@
         @endforeach  
       </div>
 
-        </div>
-        <hr>
-        <div class="addButton">
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalAddJournal">+</button>
-        <hr> 
-        </div>
+        <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddJournal">
+          <i class="bx bx-plus my-float"></i>
+        </a>
+
+</div>       
 </body>
 
 @foreach($journal as $item)
@@ -161,6 +160,7 @@
 </div>
 </form>
 @endforeach  
+
 <!-- Add Journal Modal-->
 <form action="{{ route('storeJournal') }}" method="POST" enctype="multipart/form-data">
       <div class="modal fade" id="ModalAddJournal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
