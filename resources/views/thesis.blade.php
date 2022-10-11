@@ -104,8 +104,6 @@
                     </div>
     
     <div class="container-fluid">
-
-      
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
         
     @foreach($thesis as $item)

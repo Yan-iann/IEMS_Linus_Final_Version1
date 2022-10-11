@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('journal_title');
             $table->string('journal_author');
             $table->string('journal_reference');
-            $table->string('journal_desc');
+            $table->string('journal_desc',500);
             $table->string('date_published');
             $table->string('journal_status');
         });

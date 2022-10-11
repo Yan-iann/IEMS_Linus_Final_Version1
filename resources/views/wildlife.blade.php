@@ -1,4 +1,5 @@
 @extends('Flayout')
+@section('content')
 <body>
 <div class="sidebar close">
     <div class="logo-details">
@@ -118,8 +119,6 @@
     </a>
 
   </div>
-  
-
 </body>
 
 @foreach($wildlifes as $item)

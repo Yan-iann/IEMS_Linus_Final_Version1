@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('wildlife_genus');
             $table->string('wildlife_species');
             $table->string('wildlife_location');
-            $table->string('wildlife_desc');
+            $table->string('wildlife_desc',500);
             $table->string('wildlife_pic', 300);
             $table->string('wildlife_status');
         });
