@@ -17,6 +17,20 @@
                 <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
+            <div>
+                <x-input-label for="name" :value="__('Middle Name')" />
+
+                <x-text-input id="middle_name" class="block mt-1 w-full" type="text" name="middle_name"  required autofocus />
+            </div>
+
+            
+            <div>
+                <x-input-label for="name" :value="__('Last Name')" />
+
+                <x-text-input id="last_name" class="block mt-1 w-full" type="text" name="last_name"  required autofocus />
+            </div>
+          
+
             <!-- Email Address -->
             <div class="mt-4">
                 <x-input-label for="email" :value="__('Email')" />
@@ -41,6 +55,12 @@
                 <x-text-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
                                 name="password_confirmation" required />
+            </div>
+
+            <div>
+                <x-input-label for="user_type" :value="__('User Type')" />
+
+                <x-text-input id="user_type" class="block mt-1 w-full" type="text" name="user_type"  required autofocus />
             </div>
 
             <div class="flex items-center justify-end mt-4">

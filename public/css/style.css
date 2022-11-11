@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 266px;
+  width: 200px;
   background: #1DA2D8;
   z-index: 100;
   transition: all 0.5s ease;
@@ -98,8 +98,8 @@
   text-decoration: none;
 }
 .sidebar .nav-links li a .link_name{
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 50;
   color: #fff;
   transition: all 0.4s ease;
 }
@@ -173,7 +173,8 @@
 .sidebar .profile-details{
   position: fixed;
   bottom: 0;
-  width: 260px;
+  left: 0;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -205,6 +206,7 @@
 }
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job{
+  margin-left: 10px;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -220,31 +222,36 @@
 }
 .home-section{
   position: relative;
-  left: 260px;
+  top: 0;
+  left: 109px;
   transition: all 0.5s ease;
-  background: #E5E5E5;
   width: calc(100% - 78px);
 }
 .sidebar.close ~ .home-section{
-  left: 78px;
+  left: 100px;
   width: calc(100% - 78px);
 }
 .home-section .home-content{
-  height: 60px;
+  height: 60px; 
   display: flex;
   align-items: center;
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
-  color: #1DA2D8;
-  font-size: 35px;
+  color: #72b5df;
+  font-size: 50px;
 }
 .home-section .home-content .bx-menu{
   margin: 0 15px;
   cursor: pointer;
 }
+.bx-menu
+{
+  margin-left: 0px;
+  cursor: pointer;
+}
 .home-section .home-content .text{
-  font-size: 26px;
+  font-size: 40px;
   font-weight: 600;
 }
 @media (max-width: 400px) {
@@ -338,6 +345,10 @@ button.btn btn-info {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   transition: .4s ease-in-out;
   cursor: pointer;
+}
+content
+{
+  background-color: gray;
 }
 
 

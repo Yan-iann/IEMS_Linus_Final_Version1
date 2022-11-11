@@ -5,19 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class user_info extends Model
+class announcement extends Model
 {
     use HasFactory;
+
     public $timestamps = false;
 
-    protected $table = 'user_info';
-    protected $primaryKey = 'id';
-    
+    protected $table = 'announcement';
+    protected $primaryKey = 'anno_ID';
+
     protected $fillable = [
+        'anno_title',
+        'anno_author',
+        'anno_date',
+        'anno_content',
+        'anno_status',
         'user_ID',
-        'name',
-        'middle_name',
-        'last_name',
-        'profile_pic',
     ];
 }

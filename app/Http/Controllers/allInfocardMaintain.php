@@ -18,15 +18,10 @@ class allInfocardMaintain extends Controller
          $validator = Validator::make(request()->all(), [
         'wildlife_name' => 'required',
         'wildlife_scientific_name' => 'required',
-        'wildlife_class' => 'required',
-        'wildlife_order' => 'required',
-        'wildlife_family' => 'required',
-        'wildlife_genus' => 'required',
-        'wildlife_species' => 'required',
-        'wildlife_location' => 'required',
         'wildlife_desc' => 'required',
         'wildlife_pic' => 'required',
         'wildlife_status' => 'required',
+        'wildlife_type' => 'required',
         'info_type' => 'required',
         ]);
     
@@ -46,8 +41,8 @@ class allInfocardMaintain extends Controller
                 $path = request()->file('wildlife_pic')->move('storage/images',$filename);
                 $requestData["wildlife_pic"] = $path;
                 Wildlife::create($requestData);
-                $wildlife = Wildlife::all();
-                return view ('wildlife')->with('wildlifes', $wildlife);
+                $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
+                return view ('IEMS.Linus.FACULTY.wildlife')->with('wildlifes', $wildlife);
             }
         }
     }//end of adding wildlife
@@ -78,7 +73,7 @@ class allInfocardMaintain extends Controller
                 $requestData["info_ID"] =  $infocard->info_ID;
                 thesis_paper::create($requestData);
                 $thesis = thesis_paper::all();
-                return view('thesis')->with('thesis',$thesis);
+                return view('IEMS.Linus.FACULTY.thesis')->with('thesis',$thesis);
             }     
         }
     }//end of adding thesis
@@ -109,7 +104,7 @@ class allInfocardMaintain extends Controller
                     $requestData["info_ID"] =  $infocard->info_ID;
                     journal_article::create($requestData);
                     $journal = journal_article::all();
-                    return view('journal')->with('journal',$journal);
+                    return view('IEMS.Linus.FACULTY.journal')->with('journal',$journal);
                 }
             }
     }//end of adding journal

@@ -26,5 +26,8 @@ class Wildlife extends Model
         'wildlife_desc',
         'wildlife_pic',
         'wildlife_status',
+        'wildlife_bone',
+        'wildlife_ref',
+        'wildlife_type',
     ];
 }
